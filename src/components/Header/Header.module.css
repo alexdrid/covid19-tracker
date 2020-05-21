@@ -1,0 +1,25 @@
+.bar {
+  background-color: #264653 !important;
+}
+
+.menuButton {
+  margin-right: 10px !important;
+}
+
+.menuButton:hover {
+  background-color: #284a57 !important;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.logo {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: #2b4e5c !important;
+}
