@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CardGrid, Chart, CountrySelector, Header } from './components';
+import { DashBoard, Header, CountrySelector } from './components';
 import styles from './App.module.css';
 import { fetchData } from './api';
 
@@ -30,13 +30,21 @@ class App extends React.Component {
     const { data, country } = this.state;
 
     return (
-      <div>
+      // <div>
+      //   <Header />
+      //   <div className={styles.container}>
+      //     <CountrySelector handleChange={this.handleChange} />
+      //     <CardGrid data={data} />
+      //     <Chart data={data} country={country} />
+      //   </div>
+      // </div>
+      <div className={styles['app-container']}>
         <Header />
-        <div className={styles.container}>
-          <CountrySelector handleChange={this.handleChange} />
-          <CardGrid data={data} />
-          <Chart data={data} country={country} />
-        </div>
+        <CountrySelector handleChange={this.handleChange} />
+        <DashBoard
+          data={data}
+          country={country}
+        />
       </div>
     );
   }

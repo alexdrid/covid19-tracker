@@ -1,31 +1,37 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import styles from './Header.module.css';
-import { Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import logo from '../../images/virus-clip-art.png';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  bar: {
+    backgroundColor: '#264653',
+  },
+  title: {
+    flexGrow: 1,
+    display: 'flex',
+    alignItems: 'center',
+  },
+  logo: {
+    width: 30,
+    marginRight: theme.spacing(2),
+  },
+}));
+
 function Header() {
+  const classes = useStyles();
+
   return (
-    <div className={styles.bar}>
-      <AppBar className={styles.bar} position="static">
+    <div className={classes.root}>
+      <AppBar className={classes.bar} position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={styles.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={styles.title}>
-            <img className={styles.logo} src={logo} alt="logo" />
+          <Typography variant="h6" className={classes.title}>
+            <img className={classes.logo} src={logo} alt="logo" />
             COVID-19 Tracker
           </Typography>
-          <Button className={styles.btn} color="inherit">News</Button>
         </Toolbar>
       </AppBar>
     </div>
