@@ -30,14 +30,6 @@ class App extends React.Component {
     const { data, country } = this.state;
 
     return (
-      // <div>
-      //   <Header />
-      //   <div className={styles.container}>
-      //     <CountrySelector handleChange={this.handleChange} />
-      //     <CardGrid data={data} />
-      //     <Chart data={data} country={country} />
-      //   </div>
-      // </div>
       <div className={styles['app-container']}>
         <Header />
         <CountrySelector handleChange={this.handleChange} />
